@@ -1,0 +1,2 @@
+export { SubscriptionRequestEmail } from "@/services/email/templates/subscription-request/components/subscription-request"
+export { sendSubscriptionRequestEmail } from "@/services/email/templates/subscription-request/server/actions" 

@@ -1,0 +1,2 @@
+export { PaymentSuccessEmail } from "@/services/email/templates/payment-success/components/payment-success"
+export { sendPaymentSuccessEmail } from "@/services/email/templates/payment-success/server/actions" 
