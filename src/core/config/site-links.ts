@@ -1,14 +1,17 @@
-import { CreditCardIcon, UsersIcon } from "lucide-react"
-import {
-	LuChartLine,
-	LuHouse,
-	LuMapPin,
-	LuTicket,
-	LuUser
-} from "react-icons/lu"
-import { TbHierarchy2 } from "react-icons/tb"
+import { UsersIcon } from "lucide-react"
+import { LuHouse } from "react-icons/lu"
 
-export const adminLinks = {
+type NavRoute = {
+	title: string
+	url: string
+	icon: React.ComponentType
+	isActive?: boolean
+	items?: { title: string; url: string }[]
+}
+
+export const adminLinks: {
+	overview: { label: string; routes: NavRoute[] }
+} = {
 	overview: {
 		label: "Overview",
 		routes: [
@@ -18,76 +21,11 @@ export const adminLinks = {
 				icon: LuHouse
 			},
 			{
-				title: "Map Coverage",
-				url: "/admin/map-coverage",
-				icon: LuMapPin
-			},
-			{
 				title: "Users",
 				url: "/admin/users",
 				icon: UsersIcon
 			}
 		]
-	},
-	services: {
-		label: "Services",
-		routes: [
-			{
-				title: "Plans",
-				url: "/admin/plans",
-				icon: LuChartLine
-			},
-			{
-				title: "Subscriptions",
-				url: "/admin/subscriptions",
-				icon: CreditCardIcon
-			},
-			{
-				title: "Ruijie",
-				url: "/admin/ruijie",
-				icon: TbHierarchy2,
-				isActive: true,
-				items: [
-					{
-						title: "Projects",
-						url: "/admin/ruijie/projects"
-					},
-					{
-						title: "Voucher Groups",
-						url: "/admin/ruijie/voucher-groups"
-					},
-					{
-						title: "Vouchers",
-						url: "/admin/ruijie/vouchers"
-					}
-				]
-			}
-		]
-	},
-	customer: {
-		label: "Customer Management",
-		routes: [
-			{
-				title: "Clients",
-				url: "/admin/clients",
-				icon: LuUser,
-				isActive: true,
-				items: [
-					{
-						title: "Payment History",
-						url: "/admin/payment-history"
-					},
-					{
-						title: "Invoices",
-						url: "/admin/invoices"
-					}
-				]
-			},
-			{
-				title: "Tickets",
-				url: "/admin/tickets",
-				icon: LuTicket
-			}
-		]
 	}
 }
+

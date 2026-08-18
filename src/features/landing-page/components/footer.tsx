@@ -15,10 +15,6 @@ const links = {
 				{
 					label: "Home",
 					href: "/"
-				},
-				{
-					label: "Plans",
-					href: "/#plans"
 				}
 			]
 		},

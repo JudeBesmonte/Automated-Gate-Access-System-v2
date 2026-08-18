@@ -1,32 +1,17 @@
 import { db } from "./seed/config"
-import { seedPayments } from "./seed/payments/payments"
-import { seedPlans } from "./seed/plans/plans"
 import { createUsers } from "./seed/users/users"
 
 async function main() {
 	console.log("\n=== 🌱 Starting Database Seed ===\n")
 
 	try {
-		// Clean existing data (including payment-related tables)
+		// Clean existing data
 		console.log("Cleaning existing data...")
-		await db.$transaction([
-			db.paymentHistory.deleteMany(),
-			db.subscription.deleteMany(),
-			db.subscriberDetail.deleteMany(),
-			db.billingDetail.deleteMany(),
-			db.user.deleteMany(),
-			db.plan.deleteMany()
-		])
+		await db.$transaction([db.user.deleteMany()])
 
 		// Create entities and collect stats
 		console.log("Creating users...")
 		const userStats = await createUsers()
-
-		console.log("Creating plans...")
-		const planStats = await seedPlans(db)
-
-		console.log("Creating payment data...")
-		const paymentStats = await seedPayments(db)
 
 		// Output final statistics
 		const stats = {
@@ -34,14 +19,6 @@ async function main() {
 				admins: userStats.admin.total,
 				clients: userStats.client.total,
 				staffs: userStats.staff.total
-			},
-			plans: planStats.total,
-			payments: {
-				subscriberDetails: paymentStats.subscriberDetails,
-				billingDetails: paymentStats.billingDetails,
-				subscriptions: paymentStats.subscriptions,
-				paymentHistory: paymentStats.paymentHistory,
-				total: paymentStats.total
 			}
 		}
 

@@ -1,2 +1,0 @@
-export { InstallationScheduledEmail } from "@/services/email/templates/subscription-installation/components/installation-scheduled"
-export { sendInstallationScheduledEmail } from "@/services/email/templates/subscription-installation/server/actions" 

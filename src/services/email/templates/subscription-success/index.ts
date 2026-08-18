@@ -1,2 +1,0 @@
-export { SubscriptionSuccessEmail } from "@/services/email/templates/subscription-success/components/subscription-success"
-export { sendSubscriptionSuccessEmail } from "@/services/email/templates/subscription-success/server/actions" 
