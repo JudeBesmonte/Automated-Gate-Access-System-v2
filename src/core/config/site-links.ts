@@ -1,7 +1,19 @@
 import { CreditCardIcon, UsersIcon } from "lucide-react"
 import { LuChartLine, LuHouse, LuTicket, LuUser } from "react-icons/lu"
 
-export const adminLinks = {
+type NavRoute = {
+	title: string
+	url: string
+	icon: React.ComponentType
+	isActive?: boolean
+	items?: { title: string; url: string }[]
+}
+
+export const adminLinks: {
+	overview: { label: string; routes: NavRoute[] }
+	services: { label: string; routes: NavRoute[] }
+	customer: { label: string; routes: NavRoute[] }
+} = {
 	overview: {
 		label: "Overview",
 		routes: [
