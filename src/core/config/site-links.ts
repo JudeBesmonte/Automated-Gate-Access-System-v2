@@ -1,5 +1,5 @@
 import { UsersIcon } from "lucide-react"
-import { LuHouse, LuTicket } from "react-icons/lu"
+import { LuHouse } from "react-icons/lu"
 
 type NavRoute = {
 	title: string
@@ -11,7 +11,6 @@ type NavRoute = {
 
 export const adminLinks: {
 	overview: { label: string; routes: NavRoute[] }
-	customer: { label: string; routes: NavRoute[] }
 } = {
 	overview: {
 		label: "Overview",
@@ -25,16 +24,6 @@ export const adminLinks: {
 				title: "Users",
 				url: "/admin/users",
 				icon: UsersIcon
-			}
-		]
-	},
-	customer: {
-		label: "Customer Management",
-		routes: [
-			{
-				title: "Tickets",
-				url: "/admin/tickets",
-				icon: LuTicket
 			}
 		]
 	}
