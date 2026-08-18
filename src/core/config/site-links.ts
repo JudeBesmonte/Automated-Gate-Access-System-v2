@@ -1,11 +1,5 @@
 import { CreditCardIcon, UsersIcon } from "lucide-react"
-import {
-	LuChartLine,
-	LuHouse,
-	LuMapPin,
-	LuTicket,
-	LuUser
-} from "react-icons/lu"
+import { LuChartLine, LuHouse, LuTicket, LuUser } from "react-icons/lu"
 import { TbHierarchy2 } from "react-icons/tb"
 
 export const adminLinks = {
@@ -16,11 +10,6 @@ export const adminLinks = {
 				title: "Dashboard",
 				url: "/admin",
 				icon: LuHouse
-			},
-			{
-				title: "Map Coverage",
-				url: "/admin/map-coverage",
-				icon: LuMapPin
 			},
 			{
 				title: "Users",
