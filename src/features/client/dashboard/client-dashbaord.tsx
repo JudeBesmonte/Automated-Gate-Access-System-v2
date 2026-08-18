@@ -237,7 +237,7 @@ export default function Dashboard() {
 							</div>
 						))}
 						<Button variant="outline" className="w-full" asChild>
-							<Link href="/client/subscriptions">Manage Plans</Link>
+							<Link href="/client">Manage Plans</Link>
 						</Button>
 					</CardContent>
 				</Card>
