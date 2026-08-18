@@ -1,6 +1,5 @@
 import { CreditCardIcon, UsersIcon } from "lucide-react"
 import { LuChartLine, LuHouse, LuTicket, LuUser } from "react-icons/lu"
-import { TbHierarchy2 } from "react-icons/tb"
 
 export const adminLinks = {
 	overview: {
@@ -30,26 +29,6 @@ export const adminLinks = {
 				title: "Subscriptions",
 				url: "/admin/subscriptions",
 				icon: CreditCardIcon
-			},
-			{
-				title: "Ruijie",
-				url: "/admin/ruijie",
-				icon: TbHierarchy2,
-				isActive: true,
-				items: [
-					{
-						title: "Projects",
-						url: "/admin/ruijie/projects"
-					},
-					{
-						title: "Voucher Groups",
-						url: "/admin/ruijie/voucher-groups"
-					},
-					{
-						title: "Vouchers",
-						url: "/admin/ruijie/vouchers"
-					}
-				]
 			}
 		]
 	},
