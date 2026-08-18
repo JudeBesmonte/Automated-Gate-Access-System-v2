@@ -1,8 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { FileTextIcon } from "lucide-react"
-import { useSession } from "next-auth/react"
 
 import { NavLogo } from "@/core/components/nav/client/sidebar-nav-logo"
 import { NavUser } from "@/core/components/nav/client/sidebar-nav-user"
@@ -20,12 +18,10 @@ import {
 	SidebarRail,
 	Sidebar as UISidebar
 } from "@/core/components/ui/sidebar"
-import { useClientSubscriptions } from "@/core/hooks/use-client-subscriptions"
 import {
 	FeedbackIcon,
 	SupportIcon as HelpIcon,
-	HomeIcon,
-	ReportIcon
+	HomeIcon
 } from "@/core/lib/icons"
 
 const platform = [
@@ -33,16 +29,6 @@ const platform = [
 		title: "Dashboard",
 		url: "/client",
 		icon: HomeIcon
-	},
-	{
-		title: "Subscriptions",
-		url: "/client/subscriptions",
-		icon: ReportIcon
-	},
-	{
-		title: "Invoice",
-		url: "/client/invoices",
-		icon: FileTextIcon
 	}
 ]
 
@@ -62,9 +48,6 @@ const support = [
 export const Sidebar = ({
 	...props
 }: React.ComponentProps<typeof UISidebar>) => {
-	const { data: session } = useSession()
-	const { data: subscriptions } = useClientSubscriptions(session?.user?.id)
-
 	return (
 		<UISidebar {...props}>
 			<SidebarHeader>
@@ -86,35 +69,6 @@ export const Sidebar = ({
 								</SidebarMenuButton>
 							</SidebarMenuItem>
 						))}
-					</SidebarMenu>
-				</SidebarGroup>
-
-				<SidebarGroup>
-					<SidebarGroupLabel>My Subscriptions</SidebarGroupLabel>
-					<SidebarMenu>
-						{subscriptions && subscriptions.length > 0 ? (
-							subscriptions.map((sub) => {
-								const currentPlan = sub.plan
-								if (!currentPlan) return null
-								return (
-									<SidebarMenuItem key={sub.id}>
-										<SidebarMenuButton tooltip={currentPlan.name} asChild>
-											<Link href={`/client/plan/${currentPlan.slug}`}>
-												<FileTextIcon />
-												<span>{currentPlan.name}</span>
-											</Link>
-										</SidebarMenuButton>
-									</SidebarMenuItem>
-								)
-							})
-						) : (
-							<SidebarMenuItem>
-								<SidebarMenuButton tooltip="No Active Plans">
-									<FileTextIcon className="text-muted-foreground" />
-									<span className="text-muted-foreground">No Active Plans</span>
-								</SidebarMenuButton>
-							</SidebarMenuItem>
-						)}
 					</SidebarMenu>
 				</SidebarGroup>
 

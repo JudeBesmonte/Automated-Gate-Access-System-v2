@@ -54,45 +54,6 @@ export const Sidebar = async ({
 				</SidebarGroup>
 
 				<SidebarGroup>
-					<SidebarGroupLabel>{adminLinks.services.label}</SidebarGroupLabel>
-					<SidebarMenu>
-						{adminLinks.services.routes.map((item) => (
-							<Collapsible key={item.title} defaultOpen={item.isActive} asChild>
-								<SidebarMenuItem key={item.title}>
-									<SidebarMenuButton tooltip={item.title} asChild>
-										<Link href={item.url}>
-											<item.icon /> {item.title}
-										</Link>
-									</SidebarMenuButton>
-
-									{item.items?.length ? (
-										<>
-											<CollapsibleTrigger asChild>
-												<SidebarMenuAction className="size-6 -translate-y-0.5 data-[state=open]:rotate-90">
-													<ChevronRightIcon />
-													<span className="sr-only">Toggle</span>
-												</SidebarMenuAction>
-											</CollapsibleTrigger>
-											<CollapsibleContent>
-												<SidebarMenuSub>
-													{item.items?.map((subItem) => (
-														<SidebarMenuSubItem key={subItem.title}>
-															<SidebarMenuSubButton asChild>
-																<Link href={subItem.url}>{subItem.title}</Link>
-															</SidebarMenuSubButton>
-														</SidebarMenuSubItem>
-													))}
-												</SidebarMenuSub>
-											</CollapsibleContent>
-										</>
-									) : null}
-								</SidebarMenuItem>
-							</Collapsible>
-						))}
-					</SidebarMenu>
-				</SidebarGroup>
-
-				<SidebarGroup>
 					<SidebarGroupLabel>{adminLinks.customer.label}</SidebarGroupLabel>
 					<SidebarMenu>
 						{adminLinks.customer.routes.map((item) => (
