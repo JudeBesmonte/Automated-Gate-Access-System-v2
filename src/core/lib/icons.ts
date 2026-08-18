@@ -16,7 +16,6 @@ import {
 	LuCopy,
 	LuEyeOff,
 	LuFilter,
-	LuFolderSync,
 	LuHouse,
 	LuLoader,
 	LuLogOut,
@@ -27,13 +26,10 @@ import {
 	LuPaintbrush,
 	LuPencil,
 	LuPlus,
-	LuRefreshCw,
 	LuSearch,
 	LuSend,
 	LuSettings2,
 	LuSun,
-	LuTicket,
-	LuTickets,
 	LuTrash,
 	LuUser,
 	LuUserPen,
@@ -46,7 +42,7 @@ import {
 	RxHamburgerMenu,
 	RxReset
 } from "react-icons/rx"
-import { TbCircleFilled, TbHierarchy2 } from "react-icons/tb"
+import { TbCircleFilled } from "react-icons/tb"
 
 // UI Icons
 export const LoadingIcon = LuLoader
@@ -62,7 +58,6 @@ export const SignOutIcon = LuLogOut
 
 // Sidebar Icons
 export const HomeIcon = LuHouse
-export const HubIcon = TbHierarchy2
 export const UsersIcon = LuUsers
 export const ClientIcon = LuBookUser
 export const ReportIcon = LuChartLine
@@ -80,14 +75,6 @@ export const SystemIcon = LuMonitor
 export const LocationIcon = LuMapPin
 export const UserIcon = LuUser
 export const AccountIcon = LuBadgeCheck
-export const SyncIcon = LuFolderSync
-export const SyncButtonIcon = LuRefreshCw
-
-// Voucher Group Icons
-export const VoucherGroupIcon = LuTickets
-
-// Voucher Icons
-export const VoucherIcon = LuTicket
 
 // Crud Icons
 export const MoreVerticalIcon = MoreVertical
