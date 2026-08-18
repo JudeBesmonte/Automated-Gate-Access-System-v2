@@ -5,7 +5,6 @@ config()
 
 module.exports = {
 	env: {
-		PAYMONGO_SECRET_KEY: process.env.PAYMONGO_SECRET_KEY,
 		NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 	}
 }

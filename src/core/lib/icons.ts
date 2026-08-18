@@ -3,9 +3,7 @@ import {
 	LuArrowDownZA,
 	LuArrowUpAZ,
 	LuBadgeCheck,
-	LuBookUser,
 	LuCalendar,
-	LuChartLine,
 	LuCheck,
 	LuChevronLeft,
 	LuChevronRight,
@@ -59,8 +57,6 @@ export const SignOutIcon = LuLogOut
 // Sidebar Icons
 export const HomeIcon = LuHouse
 export const UsersIcon = LuUsers
-export const ClientIcon = LuBookUser
-export const ReportIcon = LuChartLine
 export const PlaygroundIcon = LuCode
 export const SupportIcon = LuMessageCircleQuestion
 export const FeedbackIcon = LuSend
