@@ -1,4 +1,4 @@
-import { UsersIcon } from "lucide-react"
+import { CameraIcon, CreditCardIcon, IdCardIcon, UsersIcon } from "lucide-react"
 import { LuHouse } from "react-icons/lu"
 
 type NavRoute = {
@@ -24,6 +24,21 @@ export const adminLinks: {
 				title: "Users",
 				url: "/admin/users",
 				icon: UsersIcon
+			},
+			{
+				title: "RFID Tags",
+				url: "/admin/rfid-tags",
+				icon: CreditCardIcon
+			},
+			{
+				title: "License Plate",
+				url: "/admin/license-plate",
+				icon: CameraIcon
+			},
+			{
+				title: "License ID",
+				url: "/admin/license-id",
+				icon: IdCardIcon
 			}
 		]
 	}
